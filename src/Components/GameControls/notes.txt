@@ -1,0 +1,11 @@
+How think regarding state of submission of form?
+
+I need form input and action buttons to work together so
+best is to place submission logic and state in the shared parent
+Game controls.
+
+1: start with form logic
+
+1st: if shorter than four characters it shall be red
+2nd: if contains letter that is not allowed borders shall be red
+3rd: if not containing centerletter it shall be red

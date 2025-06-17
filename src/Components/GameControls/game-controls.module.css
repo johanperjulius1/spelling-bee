@@ -1,0 +1,92 @@
+.game-controls {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-one {
+  position: relative;
+  top: 10px;
+}
+
+.button-two {
+  bottom: 34px;
+  left: 21px;
+  position: relative;
+}
+
+.button-three {
+  bottom: 34px;
+  right: 21px;
+  position: relative;
+}
+
+.button-four {
+  bottom: 45px;
+  left: 21px;
+  position: relative;
+}
+
+.button-five {
+  position: relative;
+  bottom: 10px;
+}
+
+.button-six {
+  bottom: 45px;
+  right: 21px;
+  position: relative;
+}
+
+.hex-button {
+  align-items: center;
+  background: #f0f0f0;
+  border: none;
+  color: #222;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  cursor: pointer;
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 80px;
+  justify-content: center;
+  outline: none;
+  transition: background 0.2s;
+  width: 80px;
+}
+
+.hex-button.center {
+  background: #ffe14b; /* yellow for center */
+}
+
+.hive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.action-buttons-container {
+}
+
+.action-button {
+  background-color: transparent;
+  border-radius: 20%;
+  margin: 5px;
+  padding: 20px 10px;
+}
+
+.message {
+  color: #333;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border-left: 4px solid #007bff;
+}
