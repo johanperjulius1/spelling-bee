@@ -1,6 +1,6 @@
 import { useGame } from "./hooks/useGame.js";
-import Header from "./Components/Header";
-import Game from "./Components/Game";
+import Header from "./components/Header";
+import Game from "./components/Game";
 
 function App() {
   const { loading } = useGame();
