@@ -51,6 +51,7 @@ export function GameProvider({ children }) {
         addFoundWord,
         score,
         setScore,
+        maxPoints: todaysGame?.maxPoints || 0,
       }}
     >
       {children}

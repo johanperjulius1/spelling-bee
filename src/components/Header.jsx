@@ -20,12 +20,6 @@ export default function Header() {
           <li className={styles["nav-list__item"]}>
             <a href="#puzzle">Play Yesterday's Puzzle</a>
           </li>
-          <li className={styles["nav-list__item"]}>
-            <a href="#hints">Hints</a>
-          </li>
-          <li className={styles["nav-list__item"]}>
-            <a href="#more">More</a>
-          </li>
         </ul>
       </nav>
     </header>

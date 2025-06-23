@@ -13,6 +13,7 @@
                 "l",
                 "p"
             ],
+            "maxPoints": 100,
             "validLetters": [
                 "b",
                 "a",
