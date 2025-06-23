@@ -38,7 +38,7 @@ export default function PointSection() {
                 : ""
           }`}
         >
-          {currentLevel === 1 ? score : "0"}
+          {currentLevel === 1 ? score : ""}
         </div>
         <div
           className={`${styles.circle} ${styles.two} ${
