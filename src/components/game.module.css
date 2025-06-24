@@ -18,7 +18,7 @@
     align-items: center;
   }
   .game-section {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 0;
     width: 100%;
   }
