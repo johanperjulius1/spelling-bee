@@ -75,9 +75,9 @@ export default function PointSection() {
         </div>
       </div>
       <section className={styles["wordlist-container"]}>
-        <h2 className={styles["wordlist-title"]}>
+        <p className={styles["wordlist-title"]}>
           You have found {foundWords.length} words
-        </h2>
+        </p>
         <ul className={styles["wordlist-words"]}>{listOfWords}</ul>
       </section>
     </aside>

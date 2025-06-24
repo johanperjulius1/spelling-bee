@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 100%;
+  margin-top: 35px;
   position: relative;
-  width: 350px;
+  width: 450px;
   z-index: 1;
 }
 
@@ -50,15 +50,34 @@
 }
 
 .circle.active {
-  background-color: #f2ee0f;
-  border-color: #f2ee0f;
+  background-color: #ffe14b;
+  border-color: #ffe14b;
   color: #000;
   font-size: 5.5px; /* 10px ÷ 2.5 = 4px to maintain same visual size */
   transform: scale(2.7);
 }
 
 .circle.completed {
-  background-color: #f2ee0f;
-  border-color: #f2ee0f;
+  background-color: #ffe14b;
+  border-color: #ffe14b;
   font-size: 0;
+}
+
+
+.wordlist-words {
+  border: 1px solid #c3bdbd;
+  height: 500px;
+  padding-top: 20px;
+  width: 400px;
+  list-style: none;
+}
+
+.wordlist-words li {
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+  width: 100px;
+}
+
+.wordlist-title {
+  
 }
