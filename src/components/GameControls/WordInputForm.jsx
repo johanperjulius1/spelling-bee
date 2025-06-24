@@ -21,12 +21,14 @@ export function WordInputForm({
   return (
     <form method="post" onSubmit={submitHandler}>
       <input
+        name="wordInput"
+        id="wordInput"
         className={inputClassName}
         type="text"
         value={userInput}
         onChange={handleInputChange}
         placeholder="Type or click"
-      />
+      ></input>
       {hasErrors && <p className={styles.errorMessage}>{errorMessage}</p>}
       {submitHandler}
     </form>

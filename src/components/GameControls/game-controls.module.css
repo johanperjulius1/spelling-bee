@@ -57,7 +57,7 @@
 }
 
 .hex-button.center {
-  background: #ffe14b; /* yellow for center */
+  background: #ffe14b;
 }
 
 .hive {
@@ -89,4 +89,22 @@
   border-radius: 4px;
   background-color: #f0f0f0;
   border-left: 4px solid #007bff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hex-button {
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+  }
+
+  .action-button {
+    padding: 15px 8px;
+    font-size: 14px;
+  }
+
+  .game-controls {
+    padding: 10px;
+  }
 }

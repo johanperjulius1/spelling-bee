@@ -1,9 +1,8 @@
-.points-container {
-}
 
 .progress-wrapper {
   align-items: center;
   display: flex;
+  gap: 20px;
   margin-top: 25px;
 }
 
@@ -11,7 +10,7 @@
   color: #333;
   font-size: 14px;
   font-weight: bold;
-  min-width: 50px;
+  text-wrap: nowrap;
 }
 
 .progress-container {
@@ -19,8 +18,8 @@
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  max-width: 95%;
-  min-width: 89%;
+  max-width: 90%;
+  min-width: 80%;
   z-index: 1;
 }
 

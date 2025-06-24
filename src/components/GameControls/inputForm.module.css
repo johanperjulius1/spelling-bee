@@ -6,10 +6,14 @@
   outline: none;
 }
 
-.input {
+.input,
+.input:focus {
   font-size: 30px;
+  font-weight: bold;
   height: 50px;
   width: 190px;
+  caret-color: #ffe14b;
+  white-space: nowrap;
 }
 
 .errorMessage {
@@ -17,4 +21,15 @@
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* .input,
+  .input:focus {
+    width: 100%;
+    max-width: 280px;
+    font-size: 24px;
+    height: 45px;
+  } */
 }

@@ -4,8 +4,22 @@
 
 .game-section {
   display: flex;
+  gap: 150px;
   height: 65vh;
-  margin: 0 auto;
   justify-content: space-around;
-  width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .game-section {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
 }
