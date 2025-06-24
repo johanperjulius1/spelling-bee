@@ -2,7 +2,7 @@
     "data": {
         "today": {
             "displayWeekday": "Tuesday",
-            "displayDate": "February 13, 2024",
+            "displayDate": "Week 26, 2025",
             "printDate": "2024-02-13",
             "centerLetter": "b",
             "outerLetters": [
@@ -81,7 +81,7 @@
             ],
             "id": 15845,
             "freeExpiration": 0,
-            "editor": "Johan"
+            "editor": "WordLover"
         },
         "yesterday": {
             "displayWeekday": "Monday",

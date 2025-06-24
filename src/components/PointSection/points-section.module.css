@@ -1,13 +1,26 @@
 .points-container {
 }
 
+.progress-wrapper {
+  align-items: center;
+  display: flex;
+  margin-top: 25px;
+}
+
+.encouragement-text {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 50px;
+}
+
 .progress-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 35px;
   position: relative;
-  width: 450px;
+  max-width: 95%;
+  min-width: 89%;
   z-index: 1;
 }
 
@@ -63,7 +76,6 @@
   font-size: 0;
 }
 
-
 .wordlist-words {
   border: 1px solid #c3bdbd;
   height: 500px;
@@ -79,5 +91,4 @@
 }
 
 .wordlist-title {
-  
 }

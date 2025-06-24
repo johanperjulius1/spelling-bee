@@ -22,56 +22,70 @@ export default function PointSection() {
     <li key={index}>{foundWord}</li>
   ));
 
+  const getEncouragementText = () => {
+    if (currentLevel === 0) return "Start";
+    if (currentLevel === 1) return "Good Start";
+    if (currentLevel === 2) return "Moving Up";
+    if (currentLevel === 3) return "Good";
+    if (currentLevel === 4) return "Great";
+    return "Amazing";
+  };
+
   return (
     <aside className={styles["points-container"]}>
-      <div className={styles["progress-container"]}>
-        <div
-          className={styles.progress}
-          style={{ width: `${progressPercentage}%` }}
-        />
-        <div
-          className={`${styles.circle} ${styles.one} ${
-            currentLevel === 1
-              ? styles.active
-              : currentLevel > 1
-                ? styles.completed
-                : ""
-          }`}
-        >
-          {currentLevel === 1 ? score : ""}
-        </div>
-        <div
-          className={`${styles.circle} ${styles.two} ${
-            currentLevel === 2
-              ? styles.active
-              : currentLevel > 2
-                ? styles.completed
-                : ""
-          }`}
-        >
-          {currentLevel === 2 ? score : ""}
-        </div>
-        <div
-          className={`${styles.circle} ${styles.three} ${
-            currentLevel === 3
-              ? styles.active
-              : currentLevel > 3
-                ? styles.completed
-                : ""
-          }`}
-        >
-          {currentLevel === 3 ? score : ""}
-        </div>
-        <div
-          className={`${styles.circle} ${styles.four} ${
-            currentLevel === 4
-              ? styles.active
-              : currentLevel > 4
-                ? styles.completed
-                : ""
-          }`}
-        >
-          {currentLevel === 4 ? score : ""}
+      <div className={styles["progress-wrapper"]}>
+        <p className={styles["encouragement-text"]}>
+          {getEncouragementText()}
+        </p>
+        <div className={styles["progress-container"]}>
+          <div
+            className={styles.progress}
+            style={{ width: `${progressPercentage}%` }}
+          />
+          <div
+            className={`${styles.circle} ${styles.one} ${
+              currentLevel === 1
+                ? styles.active
+                : currentLevel > 1
+                  ? styles.completed
+                  : ""
+            }`}
+          >
+            {currentLevel === 1 ? score : ""}
+          </div>
+          <div
+            className={`${styles.circle} ${styles.two} ${
+              currentLevel === 2
+                ? styles.active
+                : currentLevel > 2
+                  ? styles.completed
+                  : ""
+            }`}
+          >
+            {currentLevel === 2 ? score : ""}
+          </div>
+          <div
+            className={`${styles.circle} ${styles.three} ${
+              currentLevel === 3
+                ? styles.active
+                : currentLevel > 3
+                  ? styles.completed
+                  : ""
+            }`}
+          >
+            {currentLevel === 3 ? score : ""}
+          </div>
+          <div
+            className={`${styles.circle} ${styles.four} ${
+              currentLevel === 4
+                ? styles.active
+                : currentLevel > 4
+                  ? styles.completed
+                  : ""
+            }`}
+          >
+            {currentLevel === 4 ? score : ""}
+          </div>
         </div>
       </div>
       <section className={styles["wordlist-container"]}>
