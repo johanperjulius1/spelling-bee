@@ -81,17 +81,26 @@
   height: 500px;
   justify-content: flex-end;
   width: 400px;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 5px;
 }
 
 .wordlist-words {
-  padding-top: 20px;
   list-style: none;
+  margin: 0;
+  padding-left: 20px;
 }
 
 .wordlist-words li {
   border-bottom: 1px solid gray;
   padding-bottom: 5px;
   width: 100px;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: none;
 }
 
 /* .faq-toggle .closed, */
