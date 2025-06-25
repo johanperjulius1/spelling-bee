@@ -1,0 +1,7 @@
+dropdown break down:
+
+1. is open / close with use state
+2. Make open close symbol rotate on true false
+3. Add hidden property and base on true false
+4. Add button that changes true false
+5. style button with fa icon

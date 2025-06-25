@@ -1,4 +1,3 @@
-
 .progress-wrapper {
   align-items: center;
   display: flex;
@@ -75,11 +74,17 @@
   font-size: 0;
 }
 
-.wordlist-words {
+.wordlist-inner {
+  align-items: flex-start;
   border: 1px solid #c3bdbd;
+  display: flex;
   height: 500px;
-  padding-top: 20px;
+  justify-content: flex-end;
   width: 400px;
+}
+
+.wordlist-words {
+  padding-top: 20px;
   list-style: none;
 }
 
@@ -89,5 +94,19 @@
   width: 100px;
 }
 
-.wordlist-title {
+/* .faq-toggle .closed, */
+.faq-toggle .open {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle .closed {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .faq-toggle {
+    /* display: none; */
+  }
 }

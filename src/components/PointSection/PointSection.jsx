@@ -1,8 +1,12 @@
+import { useState } from "react";
 import styles from "./points-section.module.css";
 import { useGame } from "../../hooks/useGame";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function PointSection() {
   const { foundWords, score, maxPoints } = useGame();
+  const [isOpen, setIsOpen] = useState(true);
 
   const progressPercentage =
     maxPoints > 0 ? Math.min((score / maxPoints) * 100, 100) : 0;
@@ -34,9 +38,7 @@ export default function PointSection() {
   return (
     <aside className={styles["points-container"]}>
       <div className={styles["progress-wrapper"]}>
-        <p className={styles["encouragement-text"]}>
-          {getEncouragementText()}
-        </p>
+        <p className={styles["encouragement-text"]}>{getEncouragementText()}</p>
         <div className={styles["progress-container"]}>
           <div
             className={styles.progress}
@@ -92,7 +94,12 @@ export default function PointSection() {
         <p className={styles["wordlist-title"]}>
           You have found {foundWords.length} words
         </p>
-        <ul className={styles["wordlist-words"]}>{listOfWords}</ul>
+        <div className={styles["wordlist-inner"]}>
+          <ul className={styles["wordlist-words"]}>{listOfWords}</ul>
+          <button className={styles["faq-toggle"]} onClick={() => setIsOpen(!isOpen)}>
+            <FontAwesomeIcon icon={faChevronDown} className={isOpen ? styles.open : styles.closed } />
+          </button>
+        </div>
       </section>
     </aside>
   );
