@@ -94,6 +94,7 @@
   list-style: none;
   margin: 0;
   padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .wordlist-words li {
@@ -103,27 +104,40 @@
 }
 
 .faq-toggle {
-  background-color: transparent;
-  border: none;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* .faq-toggle .closed, */
+.faq-toggle-open {
+  border-bottom: none;
+}
+
+.dropdown-content {
+  border: 1px solid #ddd;
+  border-top: none;
+  background-color: white;
+}
+
 .faq-toggle .open {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-.faq-toggle .closed {
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .progress-wrapper {
-  }
+.faq-toggle .closed {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
 
-  .progress-container {
-    /* min-width: 80%; */
+@media (max-width: 768px) {
+  .wordlist-words li {
+    border-bottom: none;
   }
 }
 
@@ -131,9 +145,5 @@
   .progress-wrapper {
     width: 500px;
     max-width: 500px;
-  }
-
-  .faq-toggle {
-    /* display: none; */
   }
 }
