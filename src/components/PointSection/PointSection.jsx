@@ -12,12 +12,11 @@ export default function PointSection() {
     maxPoints > 0 ? Math.min((score / maxPoints) * 100, 100) : 0;
 
   const calculateLevel = (currentPoints, total) => {
-    if (total === 0) return 0;
     const percentage = (currentPoints / total) * 100;
     if (percentage >= 75) return 4;
     if (percentage >= 50) return 3;
     if (percentage >= 25) return 2;
-    if (percentage > 0) return 1;
+    if (percentage >= 0) return 1;
     return 0;
   };
 

@@ -1,4 +1,4 @@
-import styles from "./inputForm.module.css";
+import styles from "./word-input-form.module.css";
 
 export function WordInputForm({
   userInput,

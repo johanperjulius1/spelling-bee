@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+[css-propertysorting.mdc](mdc:.cursor/rules/css-propertysorting.mdc)
+When generating css code always sort css properties alphabetically inside css selectors
