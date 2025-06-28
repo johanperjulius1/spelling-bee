@@ -4,12 +4,11 @@ export function WordInputForm({
   userInput,
   setUserInput,
   hasErrors,
-  errorMessage,
   submitHandler,
-  setMessage
+  setMessage,
 }) {
   const handleInputChange = (event) => {
-    setMessage(null)
+    setMessage(null);
     setUserInput(event.target.value);
   };
 
@@ -29,7 +28,6 @@ export function WordInputForm({
         onChange={handleInputChange}
         placeholder="Type or click"
       ></input>
-      {hasErrors && <p className={styles.errorMessage}>{errorMessage}</p>}
       {submitHandler}
     </form>
   );

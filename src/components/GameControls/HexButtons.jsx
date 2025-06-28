@@ -10,7 +10,6 @@ export function HexButtons({ shuffledOuterLetters, setUserInput }) {
   };
 
   const outerButtons = shuffledOuterLetters.map((letter, idx) => (
-    <div className={styles["button-container"]}>
       <button
         className={`${styles["hex-button"]} ${styles[`button-${idx + 1}`]}`}
         onClick={handleButtonClick}
@@ -18,7 +17,6 @@ export function HexButtons({ shuffledOuterLetters, setUserInput }) {
       >
         {letter?.toUpperCase() || ""}
       </button>
-    </div>
   ));
 
   return (

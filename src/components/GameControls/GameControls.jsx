@@ -70,7 +70,13 @@ export default function GameControls() {
 
   return (
     <section className={styles["game-controls"]}>
-      {message && <p>{message}</p>}
+      <div className={styles.feedbackMessage}>
+        {hasErrors ? (
+          <span className={styles.errorMessage}>{getErrorMessage()}</span>
+        ) : message ? (
+          <span className={styles.successMessage}>{message}</span>
+        ) : null}
+      </div>
       <WordInputForm
         setMessage={setMessage}
         userInput={userInput}
