@@ -1,8 +1,8 @@
 .game-controls {
   align-items: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   row-gap: 15px;
 }
 
@@ -48,10 +48,9 @@
 }
 
 .hive {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* gap: -2px; */
 }
 
 .button-container {
@@ -68,20 +67,18 @@
 }
 
 .message {
+  background-color: #f0f0f0;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
   color: #333;
   font-size: 16px;
   margin: 10px 0;
   padding: 8px 12px;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-  border-left: 4px solid #007bff;
 }
 
 .feedbackMessage {
-  min-height: 16px; /* Adjust as needed for your font size */
+  min-height: 16px;
   text-align: center;
-  /* margin-bottom: 8px; */
-  /* Optionally add color, font, etc. */
 }
 
 .errorMessage {

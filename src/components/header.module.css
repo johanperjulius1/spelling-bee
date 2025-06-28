@@ -1,22 +1,22 @@
 .header {
+  margin: 0 auto;
     max-width: 1300px;
-    margin: 0 auto;
 }
 
 .nav {
-  display: flex;
   border-bottom: 1px solid black;
+  display: flex;
 }
 
 .nav-list {
-  margin-left: auto;
   display: flex;
   list-style: none;
+  margin-left: auto;
 }
 
 .nav-list__item {
-  margin-left: 20px;
   color: black;
+  margin-left: 20px;
 }
 
 .nav-list__item a {

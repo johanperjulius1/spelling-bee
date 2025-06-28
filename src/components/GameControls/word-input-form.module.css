@@ -8,12 +8,12 @@
 
 .input,
 .input:focus {
+  caret-color: #ffe14b;
   font-size: 30px;
   font-weight: bold;
   height: 50px;
-  width: 190px;
-  caret-color: #ffe14b;
   white-space: nowrap;
+  width: 190px;
 }
 
 .errorMessage {

@@ -13,9 +13,9 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .game {
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 0 10px;
   }
   .game-section {
