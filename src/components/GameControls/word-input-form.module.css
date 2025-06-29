@@ -1,9 +1,13 @@
-.error {
+/* .error {
   border: 4px solid red;
-}
+} */
 .error:focus,
 .error:active {
   outline: none;
+}
+
+.input {
+  border: none;
 }
 
 .input,
@@ -16,11 +20,13 @@
   width: 190px;
 }
 
+.input.error {
+  outline: 4px solid red;
+}
+
 .errorMessage {
   color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 0;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
