@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useGame } from "../hooks/useGame.js";
 import styles from "./header.module.css";
 
