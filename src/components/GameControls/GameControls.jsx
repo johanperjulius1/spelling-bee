@@ -9,8 +9,14 @@ export default function GameControls() {
   const [userInput, setUserInput] = useState("");
   const [shuffledOuterLetters, setShuffledOuterLetters] = useState([]);
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success"); // "success" or "error"
   const { currentGame, loading, foundWords, addFoundWord } = useGame();
   const { validLetters, centerLetter, answers } = currentGame;
+
+  const clearMessage = () => {
+    setMessage("");
+    setMessageType("success");
+  };
 
   const shuffleLetters = () => {
     const shuffled = [...shuffledOuterLetters];
@@ -59,11 +65,14 @@ export default function GameControls() {
     if (hasErrors) return;
     if (foundWords.includes(userInput.toLowerCase())) {
       setMessage("Word already found");
+      setMessageType("error");
     } else if (!answers.includes(userInput.toLowerCase())) {
       setMessage("Not in word list");
+      setMessageType("error");
     } else {
       addFoundWord(userInput.toLowerCase());
       setMessage("Correct! Well done!");
+      setMessageType("success");
       setUserInput("");
     }
   };
@@ -74,11 +83,19 @@ export default function GameControls() {
         {hasErrors ? (
           <span className={styles.errorMessage}>{getErrorMessage()}</span>
         ) : message ? (
-          <span className={styles.successMessage}>{message}</span>
+          <span
+            className={
+              messageType === "error"
+                ? styles.errorMessage
+                : styles.successMessage
+            }
+          >
+            {message}
+          </span>
         ) : null}
       </div>
       <WordInputForm
-        setMessage={setMessage}
+        setMessage={clearMessage}
         userInput={userInput}
         setUserInput={setUserInput}
         hasErrors={hasErrors}
@@ -95,6 +112,7 @@ export default function GameControls() {
         onShuffle={shuffleLetters}
         userInput={userInput}
         setUserInput={setUserInput}
+        onSubmit={submitHandler}
       />
     </section>
   );
