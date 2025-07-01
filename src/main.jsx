@@ -1,13 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router";
 import App from "./App.jsx";
 import { GameProvider } from "./contexts/GameProvider.jsx";
 
 createRoot(document.getElementById("main")).render(
   <StrictMode>
-    <GameProvider>
-      <App />
-    </GameProvider>
+    <BrowserRouter>
+      <GameProvider>
+        <App />
+      </GameProvider>
+    </BrowserRouter>
   </StrictMode>
 );
 

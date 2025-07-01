@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import { GameContext } from "./GameContext.js";
 
 export function GameProvider({ children }) {
-  const [todaysGame, setTodaysGame] = useState(null);
+  const location = useLocation();
+  const [currentGame, setCurrentGame] = useState(null);
   const [loading, setLoading] = useState(true);
   const [foundWords, setFoundWords] = useState([]);
   const [score, setScore] = useState(0);
 
   const calculateScore = (word) => {
-    if (todaysGame.pangrams.includes(word)) {
+    if (currentGame.pangrams.includes(word)) {
       setScore((prev) => prev + 14);
     } else if (word.length === 4) {
       setScore((prev) => prev + 1);
@@ -31,7 +33,14 @@ export function GameProvider({ children }) {
           },
         });
         const data = await response.json();
-        setTodaysGame(data.data.today);
+
+        if (location.pathname === "/last-week") {
+          setCurrentGame(data.data.yesterday);
+        } else {
+          setCurrentGame(data.data.today);
+        }
+        setFoundWords([]);
+        setScore(0);
       } catch (error) {
         console.error("Failed to fetch game data:", error);
       } finally {
@@ -40,18 +49,18 @@ export function GameProvider({ children }) {
     };
 
     fetchData();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <GameContext.Provider
       value={{
-        todaysGame,
+        currentGame,
         loading,
         foundWords,
         addFoundWord,
         score,
         setScore,
-        maxPoints: todaysGame?.maxPoints || 0,
+        maxPoints: currentGame?.maxPoints || 0,
       }}
     >
       {children}

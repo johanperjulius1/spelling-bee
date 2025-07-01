@@ -9,8 +9,8 @@ export default function GameControls() {
   const [userInput, setUserInput] = useState("");
   const [shuffledOuterLetters, setShuffledOuterLetters] = useState([]);
   const [message, setMessage] = useState("");
-  const { todaysGame, loading, foundWords, addFoundWord } = useGame();
-  const { validLetters, centerLetter, answers } = todaysGame;
+  const { currentGame, loading, foundWords, addFoundWord } = useGame();
+  const { validLetters, centerLetter, answers } = currentGame;
 
   const shuffleLetters = () => {
     const shuffled = [...shuffledOuterLetters];
@@ -22,12 +22,12 @@ export default function GameControls() {
   };
 
   useEffect(() => {
-    if (todaysGame?.outerLetters) {
-      setShuffledOuterLetters([...todaysGame.outerLetters]);
+    if (currentGame?.outerLetters) {
+      setShuffledOuterLetters([...currentGame.outerLetters]);
     }
-  }, [todaysGame]);
+  }, [currentGame]);
 
-  if (loading || !todaysGame) return <div>Loading...</div>;
+  if (loading || !currentGame) return <div>Loading...</div>;
 
   // Validation
   const isTooShort = userInput.length > 0 && userInput.length < 4;

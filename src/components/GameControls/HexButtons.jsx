@@ -2,21 +2,21 @@ import styles from "./game-controls.module.css";
 import { useGame } from "../../hooks/useGame.js";
 
 export function HexButtons({ shuffledOuterLetters, setUserInput }) {
-  const { todaysGame } = useGame();
-  const { centerLetter } = todaysGame;
+  const { currentGame } = useGame();
+  const { centerLetter } = currentGame;
 
   const handleButtonClick = (event) => {
     setUserInput((prev) => prev + event.target.textContent);
   };
 
   const outerButtons = shuffledOuterLetters.map((letter, idx) => (
-      <button
-        className={`${styles["hex-button"]} ${styles[`button-${idx + 1}`]}`}
-        onClick={handleButtonClick}
-        key={idx}
-      >
-        {letter?.toUpperCase() || ""}
-      </button>
+    <button
+      className={`${styles["hex-button"]} ${styles[`button-${idx + 1}`]}`}
+      onClick={handleButtonClick}
+      key={idx}
+    >
+      {letter?.toUpperCase() || ""}
+    </button>
   ));
 
   return (

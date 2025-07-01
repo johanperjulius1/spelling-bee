@@ -1,4 +1,5 @@
 import { useGame } from "./hooks/useGame.js";
+import { Routes, Route } from "react-router";
 import Header from "./components/Header";
 import Game from "./components/Game";
 
@@ -10,7 +11,10 @@ function App() {
   return (
     <>
       <Header />
-      <Game />
+      <Routes>
+        <Route path="/" element={<Game />} />
+        <Route path="/last-week" element={<Game />} />
+      </Routes>
     </>
   );
 }
