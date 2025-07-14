@@ -6,9 +6,16 @@ export function ActionButtons({
   setUserInput,
   hasErrors,
   onSubmit,
+  setMessage,
 }) {
   const deleteLastLetter = () => {
-    setUserInput((prev) => prev.slice(0, -1));
+    setUserInput((prev) => {
+      const next = prev.slice(0, -1);
+      if (next.length === 0) {
+        setMessage(null)
+      }
+      return next;
+    });
   };
 
   const handleSubmit = (event) => {

@@ -1,11 +1,12 @@
 import styles from "./game-controls.module.css";
 import { useGame } from "../../hooks/useGame.js";
 
-export function HexButtons({ shuffledOuterLetters, setUserInput }) {
+export function HexButtons({ shuffledOuterLetters, setUserInput, setMessage }) {
   const { currentGame } = useGame();
   const { centerLetter } = currentGame;
 
   const handleButtonClick = (event) => {
+    setMessage(null)
     setUserInput((prev) => prev + event.target.textContent);
   };
 

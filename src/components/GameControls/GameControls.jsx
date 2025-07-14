@@ -103,6 +103,7 @@ export default function GameControls() {
         submitHandler={submitHandler}
       ></WordInputForm>
       <HexButtons
+        setMessage={clearMessage}
         shuffledOuterLetters={shuffledOuterLetters}
         setShuffledOuterLetters={setShuffledOuterLetters}
         setUserInput={setUserInput}
@@ -113,6 +114,7 @@ export default function GameControls() {
         userInput={userInput}
         setUserInput={setUserInput}
         onSubmit={submitHandler}
+        setMessage={clearMessage}
       />
     </section>
   );
