@@ -1,15 +1,27 @@
-import { useEffect, useState } from "react";
+import { createClient } from '@sanity/client';
 
-export function LetterData() {
-  const [letters, setLetters] = useState("");
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch();
-      const finishedData = await data.json;
-      setLetters(finishedData);
-    };
+// Create the Sanity client
+// This connects to your Sanity project in the cloud
+// Configuration comes from environment variables (see .env file)
+export const client = createClient({
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: import.meta.env.VITE_SANITY_DATASET,
+  useCdn: true, // Set to false if statically generating pages, using ISR or using the token-based editor client
+  apiVersion: '2024-01-01', // Use current date (YYYY-MM-DD) to target the latest API version
+});
 
-    fetchData();
-  }, []);
-  return <>{letters}</>;
+/**
+ * Fetch the most recent puzzle
+ * @returns {Promise<Object|null>} - The most recent puzzle or null
+ */
+export async function getLatestPuzzle() {
+  const query = `*[_type == "puzzle"] | order(printDate desc)[0]`;
+  
+  try {
+    const puzzle = await client.fetch(query);
+    return puzzle;
+  } catch (error) {
+    console.error('Error fetching latest puzzle:', error);
+    return null;
+  }
 }
