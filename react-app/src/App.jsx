@@ -2,6 +2,7 @@ import { useGame } from "./hooks/useGame.js";
 import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Game from "./components/Game";
+import PuzzleExample from "./components/PuzzleExample";
 
 function NotFound() {
   console.log("NotFound component is rendering!");
@@ -21,6 +22,7 @@ function GamePage() {
     <>
       <Header />
       <Game />
+      <PuzzleExample />
     </>
   );
 }

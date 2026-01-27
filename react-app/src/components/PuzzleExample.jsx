@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getPuzzleByWeekday } from "../utils/sanityClient.js";
+import { getLatestPuzzle } from "../utils/sanityClient.js";
 
 /**
  * Example component showing how to fetch and display the "Wednesday" puzzle
  */
-export function PuzzleExample() {
+export default function PuzzleExample() {
   const [puzzle, setPuzzle] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ export function PuzzleExample() {
       try {
         setLoading(true);
         // Fetch the puzzle with displayWeekday = "Wednesday"
-        const data = await getPuzzleByWeekday("Wednesday");
+        const data = await getLatestPuzzle("Wednesday");
         
         if (data) {
           setPuzzle(data);
