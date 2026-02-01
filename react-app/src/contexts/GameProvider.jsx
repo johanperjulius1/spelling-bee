@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { GameContext } from "./GameContext.js";
+import { getLatestPuzzle } from "../utils/sanityClient.js";
 
 export function GameProvider({ children }) {
   const location = useLocation();
@@ -27,22 +28,20 @@ export function GameProvider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/data.json", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await response.json();
+        setLoading(true);
+        const puzzle = await getLatestPuzzle();
 
-        if (location.pathname === "/last-week") {
-          setCurrentGame(data.data.yesterday);
-        } else {
-          setCurrentGame(data.data.today);
+        if (!puzzle) {
+          throw new Error("Puzzle not found");
         }
+
+        const game = { ...puzzle, id: puzzle.puzzleId };
+        setCurrentGame(game);
         setFoundWords([]);
         setScore(0);
       } catch (error) {
         console.error("Failed to fetch game data:", error);
+        setCurrentGame(null);
       } finally {
         setLoading(false);
       }
