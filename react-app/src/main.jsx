@@ -13,11 +13,3 @@ createRoot(document.getElementById("main")).render(
     </BrowserRouter>
   </StrictMode>
 );
-
-// const rootNode = document.getElementById("main");
-// const root = createRoot(rootNode);
-// root.render(<App />);
-// // console.log("1",App())
-// console.dir(App())
-
-// console.log(root)

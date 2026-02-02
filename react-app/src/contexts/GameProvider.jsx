@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { GameContext } from "./GameContext.js";
-import { getLatestPuzzle } from "../utils/sanityClient.js";
+import { getLatestPuzzle, getYesterdayPuzzle } from "../utils/sanityClient.js";
 
 export function GameProvider({ children }) {
   const location = useLocation();
@@ -29,7 +29,10 @@ export function GameProvider({ children }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const puzzle = await getLatestPuzzle();
+        const puzzle =
+          location.pathname === "/last-week"
+            ? await getYesterdayPuzzle()
+            : await getLatestPuzzle();
 
         if (!puzzle) {
           throw new Error("Puzzle not found");

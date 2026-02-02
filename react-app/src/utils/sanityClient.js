@@ -11,17 +11,33 @@ export const client = createClient({
 });
 
 /**
- * Fetch the most recent puzzle
+ * Fetch the most recent puzzle (today)
  * @returns {Promise<Object|null>} - The most recent puzzle or null
  */
 export async function getLatestPuzzle() {
-  const query = `*[_type == "puzzle"] | order(printDate desc)[0]`;
-  
+  const query = `*[_type == "puzzle"] | order(printDate desc)[1]`;
+
   try {
     const puzzle = await client.fetch(query);
     return puzzle;
   } catch (error) {
     console.error('Error fetching latest puzzle:', error);
+    return null;
+  }
+}
+
+/**
+ * Fetch the second-most-recent puzzle (yesterday / last week)
+ * @returns {Promise<Object|null>} - The previous puzzle or null
+ */
+export async function getYesterdayPuzzle() {
+  const query = `*[_type == "puzzle"] | order(printDate desc)[0]`;
+
+  try {
+    const puzzle = await client.fetch(query);
+    return puzzle;
+  } catch (error) {
+    console.error('Error fetching yesterday puzzle:', error);
     return null;
   }
 }
