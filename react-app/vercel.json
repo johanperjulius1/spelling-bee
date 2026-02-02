@@ -5,7 +5,11 @@
       "destination": "/index.html"
     },
     {
-      "source": "/last-week",
+      "source": "/yesterday",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
