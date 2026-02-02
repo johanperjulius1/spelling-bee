@@ -12,9 +12,9 @@ export default function Header() {
     <header className={styles.header}>
       <h1>Spelling Bee</h1>
       <h3>
-        {location.pathname === "/last-week"
-          ? "Last Week's Puzzle"
-          : "Current weeks Puzzle"}
+        {location.pathname === "/yesterday"
+          ? "Yesterdays's Puzzle"
+          : "Todays Puzzle"}
       </h3>
       <p>{currentGame.displayDate}</p>
       <p>Edited by {currentGame.editor}</p>
@@ -22,10 +22,10 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={styles["nav-list"]}>
           <li className={styles["nav-list__item"]}>
-            {location.pathname === "/last-week" ? (
-              <a href="/">Play This Week's Puzzle</a>
+            {location.pathname === "/yesterday" ? (
+              <a href="/">Play Todays's Puzzle</a>
             ) : (
-              <a href="/last-week">Play Last Week's Puzzle</a>
+              <a href="/yesterday">Play Yesterday's Puzzle</a>
             )}
           </li>
         </ul>

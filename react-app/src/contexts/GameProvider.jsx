@@ -30,7 +30,7 @@ export function GameProvider({ children }) {
       try {
         setLoading(true);
         const puzzle =
-          location.pathname === "/last-week"
+          location.pathname === "/yesterday"
             ? await getYesterdayPuzzle()
             : await getLatestPuzzle();
 
