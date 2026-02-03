@@ -1,4 +1,5 @@
 import styles from "./word-input-form.module.css";
+import { useEffect, useRef } from "react";
 
 export function WordInputForm({
   userInput,
@@ -7,6 +8,15 @@ export function WordInputForm({
   submitHandler,
   setMessage,
 }) {
+
+  const inputRef = useRef(null);
+  
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   const handleInputChange = (event) => {
     setMessage(null);
     setUserInput(event.target.value);
@@ -20,6 +30,7 @@ export function WordInputForm({
   return (
     <form method="post" onSubmit={submitHandler}>
       <input
+      ref={inputRef}
         name="wordInput"
         id="wordInput"
         className={inputClassName}
